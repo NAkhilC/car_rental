@@ -1,0 +1,7 @@
+Hi,
+
+This is akhil
+
+To start the server use  "npm run devStart"
+We used the phpmyadmin xampp server for database.
+Make sure to start the xampp server and update database before you start the node server. 

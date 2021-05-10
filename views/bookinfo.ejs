@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <script type="text/javascript" src="/public/carbook.js"> </script>
+        <link rel="stylesheet" type="text/css" href="homecss.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    </head>
+  <body>
+  <div>
+    <div class="homenav">
+      <ul>
+        <li><a  href="home">Home</a></li>
+        <li><a href="profile">Profile</a></li>
+        <li><a href="logout" ><%= inout %></a></li>
+      </ul>
+    </div><br><br><br>
+  <div>
+    <div style="margin-left: 20px;">
+        <div class="div1">
+           <form method="POST" action="/bookinfo"><br>
+             <h3 class="pic">Provide Information</h3>
+             <input type="text" placeholder="First name " value=''  name="fname"><br>
+             <input type="text" placeholder="Last name "  name="lname"><br>
+             <input type="email" placeholder="Email"  name="email"><br>
+             <input type="number" placeholder="Phone Number" value="" name="phone"><br>
+             <input type="submit" value="Update" >
+            </form> 
+        </div>
+  </div>
+</body>
+</html>
+  
+        
+  

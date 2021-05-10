@@ -1,0 +1,150 @@
+
+
+<html>
+  <head>
+      <script type="text/javascript" src="project.js"> </script>
+      <link rel="stylesheet" type="text/css" href="homecss.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+      <script>
+        $(function(){
+		var dtToday = new Date();
+		var month = dtToday.getMonth() + 1;
+		var day = dtToday.getDate();
+		var year = dtToday.getFullYear();
+		if(month < 10)
+			month = '0' + month.toString();
+		if(day < 10)
+			day = '0' + day.toString();
+		var minDate= year + '-' + month + '-' + day;
+		$('#txtDate').attr('min', minDate);
+	});
+	$(function(){
+		var dtToday = new Date();
+		var month = dtToday.getMonth() + 1;
+		var day = dtToday.getDate()+1;
+		var year = dtToday.getFullYear();
+		if(month < 10)
+			month = '0' + month.toString();
+		if(day < 10)
+			day = '0' + day.toString();
+		var minDate= year + '-' + month + '-' + day;
+		$('#txtDate1').attr('min', minDate);
+	});
+      </script>
+  </head>
+
+<style>
+
+  table, th, td {
+  border-collapse: collapse;
+}
+th {
+  background-color: #4CAF50;
+  color: white;
+}
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+tr:nth-child(even){background-color: #f2f2f2}
+</style>  
+
+<body>
+<div>
+  <div class="homenav">
+    <ul>
+      <li><a  href="home">Home</a></li>
+      <li><a href="profile">Profile</a></li>
+      <li><a href="logout" ><%= inout %></a></li>
+      <li><a href="history" >Booking History</a></li>
+    </ul>
+  </div><br><br><br>
+<div>
+     WELCOME  <strong style="color: blue;"> <%= userid %></strong><br><br>
+     <div>
+    <div class="pickdiv">
+     <form method="get" action="/bookcar" >
+         <h3 style="margin-left: 250px;">Pick a date</h3>
+         <div style="display: flex;width: 800px;" >
+          <p style="margin-top: 30px;">From</p><input type="date" id="txtDate"  name="fromdate" required placeholder="From">
+         <input type="time" id="appt"  name="appt">
+         </div>
+         <div style="display: flex;width: 800px;">
+          <p style="margin-top: 30px;">To  </p><input type="date" id="txtDate1" name="todate" required placeholder="To" > 
+          <input type="time" id="appt1"  name="appt1">
+        </div>
+         <button onclick="pick_date()">Select Car</button><br>
+         <p style="color: red;margin-left: 250px;"><%= message %></p>
+      </form>
+    </div>
+  </div>
+     <br>
+ <div class="vech">
+      <div class="cardiv" style="background-image: url('images/cardiv.jpg');">
+         <div class="cardivn"><h2>Cars</h2></div>
+      </div>
+      <div class="cardiv" style="background-image: url('images/suvsdiv.jpg');">
+        <div class="cardivn"><h2>Suv</h2></div>
+       </div>
+      <div class="cardiv" style="background-image: url('images/truckdiv.jpg');">
+        <div class="cardivn"><h2>Truck</h2></div>
+      </div>
+      <div class="cardiv" style="background-image: url('images/cargodiv.jpg')">
+        <div class="cardivn"><h2>Cargo vans</h2></div>
+      </div>  
+</div>
+    <!-- Last login information -->
+    <br><br>
+    <div style="margin-left: 20px;">
+      <% if(userid != '' && userid != 'Guest') { %>
+      <% if(info.length > 0 && info.length < 2) { %>
+           WELCOME NEW USER!! YOU DONT HAVE LOGIN HISTORY
+      <% } %>
+      <% if(info.length > 1) { %>
+        <div class="footer">
+          Last login information
+         </div>
+       <h5 onclick="showdata()">Last logged on <strong><%= info[1].timestamp %></strong><br></h5>
+      <br> 
+     
+      <table id="loginh">
+         <thead>
+            <tr>
+              <th>Count</th>
+              <th>Last logins</th>
+           </tr>
+        </thead>
+        <tbody>
+        <% if(info.length > 2) { %>
+       <% for ( var i = 2 ; i < info.length; i++){ %>
+         <tr>
+           <td>
+             <%= i-1 %> <br>
+           </td>
+           <td>
+             <%= info[i].timestamp %> <br>
+           </td>
+        </tr>
+        <% } } %> 
+       </tbody>
+     </table>
+    </form> 
+     <% } else{ %>  
+      
+    <% } }%>
+    <% if(userid == '' && userid == 'Guest') { %>
+     <h5>Login to get offers</h5>
+     <% }%>
+   </div>
+   </div>
+
+</div>
+<div class="footer">
+  <p style="margin-left: 10px;">&#169; copyright 2021, E-car rental Network</p>
+  <p style= "margin-left:67%; "> Terms and Conditions, Privacy policy</p>
+</div>
+</body>
+
+</html>
+
+      

@@ -1,0 +1,38 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="/project.css">
+</head>
+<body>
+	<div class="br">
+		<br>
+		<div class="topnav">
+			<img class="topnav-left" width="150px" height="100px" src="/images/cars.jpg" style="position:relative;">
+			<div class="topnav-right">
+				<a href="/login"><b>LogIn</b></a>
+				<a href="/signup"><b>SignUp</b></a>
+        <a href="/home"><b>Home</b></a>
+				</div>
+		</div>	
+<div class="container">
+	<div class="header">
+	<h2><i>Recover Your Account</i></h2>
+	</div>
+	<form id="form" class="form"  method="POST" action="/passchange/:id">
+    <strong style="color:blue;"><%= data %></strong>
+    <form method="post"  action="/passchange/:id">
+      <div class="form-control">
+        <input type="password" style="margin-top: 10px;"  name="password" placeholder="new password">
+        <input type="password" style="margin-top: 10px;"  name="cpassword" placeholder="Confirm password">
+      </div>
+        <input class="subbut" type="submit" name="Send">
+        <button class="subbut"><a href="/login">Login</a></button>
+        <button class="subbut"><a href="/signup">Register</a></button>
+      </form> 
+     
+
+	</form>
+</div>
+ 
+</table>
+</body>
+</html>

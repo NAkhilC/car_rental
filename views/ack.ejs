@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="homecss.css">
+        <link rel="stylesheet" type="text/css" href="project.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    </head>
+  <body>
+  <div>
+    <div class="homenav">
+      <ul>
+        <li><a  href="home">Home</a></li>
+        <li><a href="profile">Profile</a></li>
+        <li><a href="logout" ><%= inout %></a></li>
+      </ul>
+    </div><br><br><br>
+    <%= info %>
+  <div>
+        <div style="margin-left: 250px;margin-top: 100px;">
+            <div style="display: flex;">
+                <div class="logoutpimg">&#10004; <%=message %> </div>
+            </div>
+             <button class="subbut" style="margin-left: 30px;margin-top: 50px;"><a href="login">Login</a></button>
+             <button class="subbut"><a href="signup">Register</a></button>
+        </div>
+</body>
+</html>
+  
+        
+  

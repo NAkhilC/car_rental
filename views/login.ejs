@@ -1,0 +1,51 @@
+
+<html>
+<head>
+    <script type="text/javascript" src="project.js">
+    </script>
+  
+	<link rel="stylesheet" type="text/css" href="project.css">
+</head>
+<body>
+	
+	<div class="br">
+		<br>
+		<div class="topnav">
+			<img class="topnav-left" width="150px" height="100px" src="images/cars.jpg" style="position:relative;">
+			<div class="topnav-right">
+				<a href="login"><b>LogIn</b></a>
+				<a href="signup"><b>SignUp</b></a>
+        <a href="home"><b>Home</b></a>
+				</div>
+		</div>
+    <p style="color: red;"><strong><%= data %></strong></p>
+		
+<div class="container">
+	<div class="header">
+	<h2><i>Log In With Your Account</i></h2>
+	</div>
+
+	<form id="form" class="form"  method="POST" action="/login">
+
+      <div class="form-control" >
+			<label for="username">Userid</label>
+			<input placeholder="Userid" id="email" name="name" title="Please enter userid"/>
+		</div>
+
+	<div class="form-control">
+			<label>Password</label>
+			<input type="password" placeholder="Password" name="password" id="password" title="Password must contain atleast one number,one uppercase,one lowercase and atleat 6 or more characters"/>
+		</div>
+<button class="subbut" type="submit" onclick="loginvalidation()">Submit</button>
+      <button class="subbut"  ><a href="signup">Signup</a></button>
+	 
+<p class="forgot"><a href="recovery">Forgot Password?</p>
+	<div id="dont_have_an_account">
+
+
+	</form>
+</div>
+ 
+</table>
+</body>
+</html>

@@ -1,0 +1,68 @@
+
+
+<html>
+    <head>
+        <script type="text/javascript" src="project.js"> </script>
+        <link rel="stylesheet" type="text/css" href="homecss.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    </head>
+  
+  <style>
+      table{
+          margin-left: 400px;
+      }
+      @media screen and (max-width:880px ) {
+        table{
+          margin-left: 10px;
+      }
+      }
+  
+    table, th, td {
+    border-collapse: collapse;
+ 
+  }
+  th {
+    background-color: #4CAF50;
+    color: white;
+  }
+  th, td {
+    text-align: left;
+    padding: 8px;
+    width: 100px;
+  }
+  tr:nth-child(even){background-color: #f2f2f2}
+  </style>  
+  
+  <body>
+  <div>
+    <div class="homenav">
+      <ul>
+        <li><a  href="home">Home</a></li>
+        <li><a href="profile">Profile</a></li>
+        <li><a href="logout" ><%= inout %></a></li>
+        <li><a href="history" >Booking History</a></li>
+      </ul>
+    </div><br><br><br>
+  <div>
+    <strong style="color: blue;"> <%= userid %></strong><br><br>
+      <% if(mes.length > 0 ) { %>
+       <table>
+           <tr><th>Image</th><th>From Date</th><th>To Date</th><th>Price</th><th>Booking Id</th></tr>
+           <% for(var i=0;i< mes.length; i++) { %>
+            <% imgurl="images/"+mes[i].carid+".jpg" %>
+           <tr><td>  <img style="width: 200px;height: 200px;" src=<%=imgurl%> </td><td> <%=mes[i].from_date%></td><td> <%=mes[i].to_date%></td><td> <%=mes[i].price%></td><td> <%=mes[i].ref_num%></td></tr>
+           <%}%>
+       </table>
+      <% }else{ %>
+        <strong> No booking History found <a href="bookcar">Continue booking</a></strong><br><br>
+        <%}%>
+        <div class="footer">
+          <p style="margin-left: 10px;">&#169; copyright 2021, E-car rental Network</p>
+          <p style= "margin-left:67%; "> Terms and Conditions, Privacy policy</p>
+        </div>
+  </body>
+  
+  </html>
+  
+        
+  
